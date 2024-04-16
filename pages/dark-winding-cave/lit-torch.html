@@ -1,0 +1,24 @@
+<head>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="labyrinth-background initially-hidden">
+    <p class="g on-top">
+        <i>I discovered a cave entrance concealed by the jungle vegetation.<br>
+            As I ventured deeper, the scattered daylight gave way to darkness.<br>
+            Perhaps there are treasures here, but how can I see through this darkness?
+        </i>
+    </p>
+    <p class="w text-shadow">
+        <i>I can see more clearly now.<br>
+            There are three passages that go deeper into the cave system.<br>
+        </i>
+    </p>
+    <a class="w" href="west">West</a>
+    <a class="w" href="north">North</a>
+    <a class="w" href="east">East</a>
+</body>
+<script src="./script.js"></script>
+<script>
+    new Spooky();
+    document.body.classList.remove("initially-hidden");
+</script>

@@ -1,0 +1,88 @@
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+html {
+    background-color: #033529;
+}
+body {
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: black;
+    font-family: sans-serif;
+    font-size: 14pt;
+    line-height: 21pt;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background: url("./jungle.jpg");
+}
+.container {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    width: 768px;
+    height: 768px;
+    border-radius: 16px;
+}
+.columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+}
+.column-text {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.game-piece {
+    background: url("./paper.jpg");
+    background-size: cover;
+    width: 256px;
+    height: 256px;
+    padding: 32px;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    transform: rotate(5deg);
+    display: flex;
+    align-items: center;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <img src="./cabin.png">
+        <div class="columns">
+            <div class="column-text">
+                <p>
+                    <i>I crested a steep hill and spied a dilapidated old cabin.<br>
+                        An initial search turned up broken chairs and rotting food.
+                        Whomever had inhabited this cabin had long since left.
+                        Under a loose floorboard I uncovered a square of paper with strange instructions on it.
+                        Is this a treasure map?<br>
+                        What room could this possibly lead me to?
+                    </i>
+                </p>
+            </div>
+            <div class="column-clue">
+                <div class="game-piece">
+                    When exiting, you must attempt a speed roll of 3+. If you fail, lose 1 might (but continue moving).
+                </div>
+            </div>
+        </div>
+        <div>
+            <form method="post">
+                <input type="text" name="password">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>

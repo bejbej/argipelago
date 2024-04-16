@@ -1,0 +1,24 @@
+{
+  "puzzles": [
+    {
+      "url": "/dark-winding-cave/unlit-torch",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "east-left-descend-north",
+      "item": "",
+      "player": "Legs_Sonic",
+      "location": "Meteor Herd - Pipe 1",
+      "locationId": 2
+    },
+    {
+      "url": "/abandoned-old-cabin",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "gold coins",
+      "item": "",
+      "player": "BejBej_Doom",
+      "location": "BFG - E1M1 Hanger",
+      "locationId": 2
+    }
+  ]
+}

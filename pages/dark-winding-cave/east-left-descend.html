@@ -1,0 +1,22 @@
+<head>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body class="labyrinth-background initially-hidden">
+    <div class="container">
+        <p class="w">
+            <i>
+                The passage gives way to a bottomless chasm.
+                A fall would almost certainly be an unfortunate end.
+                My destination lies across the chasm to the North.
+                There was once a bridge here, but years have rotted the ropes and slats to nothing.
+            </i>
+        </p>
+        <p class="w"><i>How do I end up on the other side?</i></p>
+        <a class="g disabled" href="east-left-descend-north" onclick="return false;">North</a>
+    </div>
+</body>
+<script src="./script.js"></script>
+<script>
+    new Spooky();
+    document.body.classList.remove("initially-hidden");
+</script>

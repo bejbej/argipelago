@@ -1,0 +1,48 @@
+<head>
+<style>
+body {
+    background-color: black;
+    color: black;
+    font-family: sans-serif;
+    background: url("./background-water.jpg");
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    line-height: 24px;
+}
+a {
+    display: inline-block;
+    padding: 8px;
+    color: black;
+}
+a.active {
+    color: white;
+}
+a.isFound-false {
+    color: #333;
+    cursor: not-allowed;
+}
+a.isSolved-true {
+    color: black;
+    text-decoration: line-through;
+    text-decoration-thickness: 4px;
+}
+</style>
+</head>
+<body>
+    <div [for]="puzzle in puzzles">
+        <a [class]="puzzle.class" [href]="puzzle.url" [textContent]="puzzle.name"></a>
+    </div>
+</body>
+<script src="./simple-data-bindings.js"></script>
+<script>
+var puzzles = fetch("/api/puzzles")
+    .then(response => response.json())
+    .then(response => {
+        return response.map(puzzle => ({
+            class: `isFound-${puzzle.isFound} isSolved-${puzzle.isSolved}`,
+            ...puzzle
+        }));
+    });
+sdb.init();
+</script>
