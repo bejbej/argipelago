@@ -3,7 +3,10 @@ const { Client, ITEMS_HANDLING_FLAGS, SERVER_PACKET_TYPE, CLIENT_STATUS } = requ
 module.exports = class ArchipelagoDal {
 
     constructor(options) {
-        this.callbacks = [];
+        this.callbacks = {
+            hints: [],
+            items: []
+        };
         this.options = options;
         this.client = new Client();
 
@@ -15,14 +18,19 @@ module.exports = class ArchipelagoDal {
         this.client.connect(connectionInfo)
             .then(() => {
                 console.log("Archipelago running");
+                this.#handleHints();
             })
             .catch(error => console.log(error));
 
         this.client.addListener(SERVER_PACKET_TYPE.RECEIVED_ITEMS, packet => this.#handleItems());
     }
 
+    onReceivedHints(callback) {
+        this.callbacks.hints.push(callback);
+    }
+
     onReceivedItems(callback) {
-        this.callbacks.push(callback);;
+        this.callbacks.items.push(callback);
     }
 
     sendItem(locationId) {
@@ -33,20 +41,33 @@ module.exports = class ArchipelagoDal {
         this.client.updateStatus(CLIENT_STATUS.GOAL);
     }
 
+    #handleHints() {
+        const hints = this.client.hints.mine;
+        hints.map(hint => {
+            const itemName = this.client.items.name(hint.item);
+            const player = this.client.players.get(hint.finding_player);
+            const location = this.client.locations.get(player.game, hint.location);
+
+            return {
+                itemName: itemName,
+                playerName: player.name,
+                locationName: location.name,
+                locationId: location.locationId
+            };
+        });
+        this.callbacks.hints.forEach(callback => callback(hints));
+    }
+
     #handleItems() {
         const items = this.client.items.received
             .filter(item => item.location > -1)
             .map(item => {
-                const name = this.client.items.name(this.options.game, item.item)
-                const player = this.client.players.get(item.player);
-                const location = this.client.locations.name(player.game, item.location);
+                const itemName = this.client.items.name(this.options.game, item.item)
 
                 return {
-                    name: name,
-                    player: player.name,
-                    location: location
+                    itemName: itemName
                 };
             });
-        this.callbacks.forEach(callback => callback(items));
+        this.callbacks.items.forEach(callback => callback(items));
     }
 }

@@ -7,7 +7,7 @@
       "solution": "east-left-descend-north",
       "item": "",
       "player": "Legs_Sonic",
-      "location": "Meteor Herd - Pipe 1",
+      "locationName": "Meteor Herd - Pipe 1",
       "locationId": 2
     },
     {
@@ -17,7 +17,17 @@
       "solution": "gold coins",
       "item": "",
       "player": "BejBej_Doom",
-      "location": "BFG - E1M1 Hanger",
+      "locationName": "BFG - E1M1 Hanger",
+      "locationId": 2
+    },
+    {
+      "url": "/late-date-night",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "$50.13",
+      "item": "",
+      "player": "BejBej_Doom",
+      "locationName": "BFG - E1M1 Hanger",
       "locationId": 2
     }
   ]

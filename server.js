@@ -15,11 +15,25 @@ const archipelagoDal = new ArchipelagoDal({
     name: process.env.archipelago_name
 });
 
+archipelagoDal.onReceivedHints(hints => {
+    const puzzles = saveDataDal.getSaveData().puzzles;
+    const puzzleByItem = toDictionary(puzzles, puzzle => puzzle.item);
+    const puzzleByItemName = toDictionary(puzzles, puzzle => puzzle.item);
+    hints.forEach(hint => {
+        const puzzle = puzzleByItemName[hint.itemName];
+        puzzle.player = hint.playerName;
+        puzzle.location = hint.locationName;
+        puzzle.locationId = hint.locationId;
+    });
+
+    saveDataDal.persistSaveData();
+});
+
 archipelagoDal.onReceivedItems(items => {
     const puzzles = saveDataDal.getSaveData();
-    const puzzleByName = toDictionary(puzzles, puzzle => `${puzzle.player}_${puzzle.location}`);
+    const puzzleByItemName = toDictionary(puzzles, puzzle => puzzle.item);
     items.forEach(item => {
-        const puzzle = puzzleByName(`${item.player}_${item.location}`);
+        const puzzle = puzzleByItemName[item.itemName];
         puzzle.isFound = true;
     });
 
@@ -34,7 +48,7 @@ app.set("etag", false);
 app.get("/api/puzzles", function(request, response) {
     const puzzles = saveDataDal.getSaveData().puzzles;
     const sanitizedPuzzles = puzzles.map(puzzle => ({
-        name: `${puzzle.player} - ${puzzle.location}`,
+        name: `${puzzle.player} - ${puzzle.locationName}`,
         url: puzzle.isFound ? puzzle.url : undefined,
         isFound: puzzle.isFound,
         isSolved: puzzle.isSolved
