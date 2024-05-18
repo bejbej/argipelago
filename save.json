@@ -29,6 +29,16 @@
       "player": "BejBej_Doom",
       "locationName": "BFG - E1M1 Hanger",
       "locationId": 2
+    },
+    {
+      "url": "/missed-connection",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "bananas",
+      "item": "",
+      "player": "BejBej_Doom",
+      "locationName": "BFG - E1M1 Hanger",
+      "locationId": 2
     }
   ]
 }
