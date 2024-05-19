@@ -39,6 +39,16 @@
       "player": "BejBej_Doom",
       "locationName": "BFG - E1M1 Hanger",
       "locationId": 2
+    },
+    {
+      "url": "/many-colored-spheres",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "2-1-0-3-12-0",
+      "item": "",
+      "player": "BejBej_Doom",
+      "locationName": "BFG - E1M1 Hanger",
+      "locationId": 2
     }
   ]
 }
