@@ -49,6 +49,16 @@
       "player": "BejBej_Doom",
       "locationName": "BFG - E1M1 Hanger",
       "locationId": 2
+    },
+    {
+      "url": "/stained-glass",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "banana",
+      "item": "",
+      "player": "BejBej_Doom",
+      "locationName": "BFG - E1M1 Hanger",
+      "locationId": 2
     }
   ]
 }
