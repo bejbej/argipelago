@@ -59,6 +59,16 @@
       "player": "BejBej_Doom",
       "locationName": "BFG - E1M1 Hanger",
       "locationId": 2
+    },
+    {
+      "url": "/silent-watcher",
+      "isFound": true,
+      "isSolved": false,
+      "solution": "104",
+      "item": "",
+      "player": "BejBej_Doom",
+      "locationName": "BFG - E1M1 Hanger",
+      "locationId": 2
     }
   ]
 }
