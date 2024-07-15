@@ -49,7 +49,7 @@ app.post("/*", function(request, response) {
     puzzlesToSolve.forEach(puzzle => puzzle.isSolved = true);
     saveDataDal.persistSaveData();
 
-    puzzlesToSolve.forEach(puzzle => archipelagoDal.sendItem(puzzle.locationId));
+    puzzlesToSolve.forEach(puzzle => archipelagoDal.sendItem(puzzle.metadata.locationId));
     if (puzzles.every(puzzle => puzzle.isSolved)) {
         archipelagoDal.sendGoalStatus();
     }
