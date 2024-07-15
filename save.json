@@ -1,74 +1,78 @@
 {
   "puzzles": [
     {
-      "url": "/dark-winding-cave/unlit-torch",
+      "url": "/dark-winding-cave",
       "isFound": true,
       "isSolved": false,
       "solution": "east-left-descend-north",
-      "item": "",
-      "player": "Legs_Sonic",
-      "locationName": "Meteor Herd - Pipe 1",
-      "locationId": 2
+      "receivingItem": "Treasure Map 1",
+      "sendingItem": "Treasure 1",
+      "metadata": {
+        "locationId": 12950328500,
+        "findingPlayer": "Cov1",
+        "findingLocation": "North Coast Seashell"
+      }
     },
     {
       "url": "/abandoned-old-cabin",
       "isFound": true,
       "isSolved": false,
       "solution": "gold coins",
-      "item": "",
-      "player": "BejBej_Doom",
-      "locationName": "BFG - E1M1 Hanger",
-      "locationId": 2
+      "receivingItem": "Treasure Map 2",
+      "sendingItem": "Treasure 2",
+      "metadata": {
+        "locationId": 12950328501,
+        "findingPlayer": "Cov1",
+        "findingLocation": "Good Creek Path East Chest"
+      }
     },
     {
       "url": "/late-date-night",
       "isFound": true,
       "isSolved": false,
       "solution": "$50.13",
-      "item": "",
-      "player": "BejBej_Doom",
-      "locationName": "BFG - E1M1 Hanger",
-      "locationId": 2
+      "receivingItem": "Treasure Map 3",
+      "sendingItem": "Treasure 3"
     },
     {
       "url": "/missed-connection",
       "isFound": true,
       "isSolved": false,
       "solution": "bananas",
-      "item": "",
-      "player": "BejBej_Doom",
-      "locationName": "BFG - E1M1 Hanger",
-      "locationId": 2
+      "receivingItem": "Treasure Map 4",
+      "sendingItem": "Treasure 4"
     },
     {
       "url": "/many-colored-spheres",
       "isFound": true,
       "isSolved": false,
       "solution": "2-1-0-3-12-0",
-      "item": "",
-      "player": "BejBej_Doom",
-      "locationName": "BFG - E1M1 Hanger",
-      "locationId": 2
+      "receivingItem": "Treasure Map 5",
+      "sendingItem": "Treasure 5"
     },
     {
       "url": "/stained-glass",
       "isFound": true,
       "isSolved": false,
       "solution": "banana",
-      "item": "",
-      "player": "BejBej_Doom",
-      "locationName": "BFG - E1M1 Hanger",
-      "locationId": 2
+      "receivingItem": "Treasure Map 6",
+      "sendingItem": "Treasure 6"
     },
     {
       "url": "/silent-watcher",
       "isFound": true,
+      "isSolved": true,
+      "solution": "storm crow",
+      "receivingItem": "Treasure Map 7",
+      "sendingItem": "Treasure 7"
+    },
+    {
+      "url": "/forbidden-door",
+      "isFound": true,
       "isSolved": false,
-      "solution": "104",
-      "item": "",
-      "player": "BejBej_Doom",
-      "locationName": "BFG - E1M1 Hanger",
-      "locationId": 2
+      "solution": "sugar_cookie",
+      "receivingItem": "Treasure Map 8",
+      "sendingItem": "Treasure 8"
     }
   ]
 }
