@@ -34,7 +34,30 @@ app.get("/api/puzzles", function(request, response) {
             isSolved: puzzle.isSolved
         };
     });
+    
     response.send(sanitizedPuzzles);
+});
+
+app.get("/api/finale", function(request, response) {
+    const fileNames = [
+        "98f8c612-4b88-4d24-af41-010a2c1f2014", 
+        "5c1fb56c-cdbf-4577-9e21-29ac96b067dc", 
+        "0000de43-e5fb-4500-a673-58756adb64e6", 
+        "76fce6d2-865e-44e9-860f-b91e88d6f79f", 
+        "37e67939-e00b-419f-beb3-c3901b6e271f", 
+        "568d70a1-887f-49e2-b487-6073aadf5205", 
+        "986fa20d-cf59-4934-ab8b-002e0834ca8e", 
+        "f4620688-64f6-4ca6-92e2-ffc1a1b7151b",
+        "d5cdc02d-3e60-4ef3-884c-e66882cbdd28",
+        "a8322d66-52ff-44d7-84e6-bd04ba90bd7e"
+    ];
+    const puzzles = saveDataDal.getSaveData().puzzles;
+    const numberOfUnsolvedPuzzles = puzzles.filter(puzzle => !puzzle.isSolved).length;
+    const fileNameIndex = Math.max(fileNames.length - 1 - numberOfUnsolvedPuzzles, 0);
+    const fileName = fileNames[fileNameIndex] + ".png";
+    response.send({
+        fileName: fileName
+    });
 });
 
 app.post("/*", function(request, response) {
@@ -49,7 +72,11 @@ app.post("/*", function(request, response) {
     puzzlesToSolve.forEach(puzzle => puzzle.isSolved = true);
     saveDataDal.persistSaveData();
 
-    puzzlesToSolve.forEach(puzzle => archipelagoDal.sendItem(puzzle.metadata.locationId));
+    puzzlesToSolve.forEach(puzzle => {
+        if (puzzle.metadata) {
+            archipelagoDal.sendItem(puzzle.metadata.locationId);
+        }
+    });
     if (puzzles.every(puzzle => puzzle.isSolved)) {
         archipelagoDal.sendGoalStatus();
     }

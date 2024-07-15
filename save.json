@@ -61,7 +61,7 @@
     {
       "url": "/silent-watcher",
       "isFound": true,
-      "isSolved": true,
+      "isSolved": false,
       "solution": "storm crow",
       "receivingItem": "Treasure Map 7",
       "sendingItem": "Treasure 7"
@@ -73,6 +73,38 @@
       "solution": "sugar_cookie",
       "receivingItem": "Treasure Map 8",
       "sendingItem": "Treasure 8"
+    },
+    {
+      "url": "/missing-cat",
+      "isFound": false,
+      "isSolved": false,
+      "solution": "placeholder",
+      "receivingItem": "Treasure Map 9",
+      "sendingItem": "Treasure 9"
+    },
+    {
+      "url": "/RSVP",
+      "isFound": false,
+      "isSolved": false,
+      "solution": "placeholder",
+      "receivingItem": "Treasure Map 10",
+      "sendingItem": "Treasure 10"
+    },
+    {
+      "url": "/foam-tiles",
+      "isFound": false,
+      "isSolved": false,
+      "solution": "placeholder",
+      "receivingItem": "Treasure Map 11",
+      "sendingItem": "Treasure 11"
+    },
+    {
+      "url": "/placeholder",
+      "isFound": false,
+      "isSolved": false,
+      "solution": "placeholder",
+      "receivingItem": "Treasure Map 12",
+      "sendingItem": "Treasure 12"
     }
   ]
 }
