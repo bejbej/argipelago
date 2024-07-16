@@ -12,11 +12,13 @@
     const ifAttribute = "[if]";
     const innerHtmlAttribute = "[innerhtml]";
     const textContentAttribute = "[textcontent]";
+    const classAttribute = "[class]";
     const reservedAttributes = [
         forAttribute,
         ifAttribute,
         innerHtmlAttribute,
-        textContentAttribute
+        textContentAttribute,
+        classAttribute
     ];
 
     window.sdb = {};
@@ -50,6 +52,10 @@
 
             if (currentElement.hasAttribute(ifAttribute)) {
                 ifHandler(currentElement, ifAttribute, scope, cancellationToken);
+            }
+
+            if (currentElement.hasAttribute(classAttribute)) {
+                classHandler(currentElement, classAttribute, scope, cancellationToken);
             }
 
             if (currentElement.hasAttribute(textContentAttribute)) {
@@ -122,16 +128,39 @@
 
     function ifHandler(element, attribute, scope, parentCancellationToken) {
         const nodeString = element.getAttribute(attribute);
-        const nodes = getNodes(nodeString);
+        const { nodes, comparer } = getNodesAndComparer(nodeString);
         resolveValue(scope, nodes, parentCancellationToken, value => {
-            if (value === false) {
+            const test = comparer !== undefined ? eval(`${value}${comparer}`) : value;
+            if (!test) {
                 element.style.display = "none";
             }
         });
     }
 
+    function classHandler(element, attribute, scope, parentCancellationToken) {
+        const nodeString = element.getAttribute(attribute);
+        const nodes = getNodes(nodeString);
+        resolveValue(scope, nodes, parentCancellationToken, value => {
+            const existingClasses = element.dataset.sdbClass ?? [];
+            existingClasses.forEach(x => element.classList.remove(x));
+            const newClasses = value.split(" ");
+            newClasses.forEach(x => element.classList.add(x));
+            element.dataset.sdbClass = newClasses;
+        });
+    }
+
     function getNodes(nodeString) {
         return nodeString.split(".");
+    }
+
+    function getNodesAndComparer(nodeString) {
+        const match = /([^=]*)\s*($|={1,3}.*)/.exec(nodeString);
+        const nodes = match[1].trim().split(".");
+        const comparer = match[2];
+        return {
+            nodes,
+            comparer
+        };
     }
 
     function resolveValue(currentValue, nodes, parentCancellationToken, callback) {
