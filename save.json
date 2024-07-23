@@ -17,7 +17,7 @@
       "url": "/abandoned-old-cabin",
       "isFound": true,
       "isSolved": false,
-      "solution": "gold coins",
+      "solution": "cobwebs",
       "receivingItem": "Treasure Map 2",
       "sendingItem": "Treasure 2",
       "metadata": {
@@ -38,7 +38,7 @@
       "url": "/missed-connection",
       "isFound": true,
       "isSolved": false,
-      "solution": "bananas",
+      "solution": "ocean",
       "receivingItem": "Treasure Map 4",
       "sendingItem": "Treasure 4"
     },
@@ -70,7 +70,7 @@
       "url": "/forbidden-door",
       "isFound": true,
       "isSolved": false,
-      "solution": "sugar_cookie",
+      "solution": "under the table",
       "receivingItem": "Treasure Map 8",
       "sendingItem": "Treasure 8"
     },
@@ -91,10 +91,10 @@
       "sendingItem": "Treasure 10"
     },
     {
-      "url": "/foam-tiles",
-      "isFound": false,
+      "url": "/three-haiku-problem",
+      "isFound": true,
       "isSolved": false,
-      "solution": "placeholder",
+      "solution": "golden retriever",
       "receivingItem": "Treasure Map 11",
       "sendingItem": "Treasure 11"
     },
