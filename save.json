@@ -2,7 +2,7 @@
   "puzzles": [
     {
       "url": "/dark-winding-cave",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "east-left-descend-north",
       "receivingItem": "Treasure Map 1",
@@ -15,7 +15,7 @@
     },
     {
       "url": "/abandoned-old-cabin",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "cobwebs",
       "receivingItem": "Treasure Map 2",
@@ -28,15 +28,15 @@
     },
     {
       "url": "/late-date-night",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "$50.13",
       "receivingItem": "Treasure Map 3",
       "sendingItem": "Treasure 3"
     },
     {
-      "url": "/missed-connection",
-      "isFound": true,
+      "url": "/island-cruise",
+      "isFound": false,
       "isSolved": false,
       "solution": "ocean",
       "receivingItem": "Treasure Map 4",
@@ -44,7 +44,7 @@
     },
     {
       "url": "/many-colored-spheres",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "2-1-0-3-12-0",
       "receivingItem": "Treasure Map 5",
@@ -52,7 +52,7 @@
     },
     {
       "url": "/stained-glass",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "banana",
       "receivingItem": "Treasure Map 6",
@@ -60,7 +60,7 @@
     },
     {
       "url": "/silent-watcher",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "storm crow",
       "receivingItem": "Treasure Map 7",
@@ -68,43 +68,27 @@
     },
     {
       "url": "/forbidden-door",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "under the table",
       "receivingItem": "Treasure Map 8",
       "sendingItem": "Treasure 8"
     },
     {
-      "url": "/missing-cat",
+      "url": "/lost-cat",
       "isFound": false,
       "isSolved": false,
-      "solution": "placeholder",
+      "solution": "whisker",
       "receivingItem": "Treasure Map 9",
       "sendingItem": "Treasure 9"
     },
     {
-      "url": "/RSVP",
-      "isFound": false,
-      "isSolved": false,
-      "solution": "placeholder",
-      "receivingItem": "Treasure Map 10",
-      "sendingItem": "Treasure 10"
-    },
-    {
       "url": "/three-haiku-problem",
-      "isFound": true,
+      "isFound": false,
       "isSolved": false,
       "solution": "golden retriever",
-      "receivingItem": "Treasure Map 11",
-      "sendingItem": "Treasure 11"
-    },
-    {
-      "url": "/placeholder",
-      "isFound": false,
-      "isSolved": false,
-      "solution": "placeholder",
-      "receivingItem": "Treasure Map 12",
-      "sendingItem": "Treasure 12"
+      "receivingItem": "Treasure Map 10",
+      "sendingItem": "Treasure 10"
     }
   ]
 }

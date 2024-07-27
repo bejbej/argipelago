@@ -40,16 +40,16 @@ app.get("/api/puzzles", function(request, response) {
 
 app.get("/api/finale", function(request, response) {
     const fileNames = [
-        "98f8c612-4b88-4d24-af41-010a2c1f2014", 
-        "5c1fb56c-cdbf-4577-9e21-29ac96b067dc", 
-        "0000de43-e5fb-4500-a673-58756adb64e6", 
-        "76fce6d2-865e-44e9-860f-b91e88d6f79f", 
-        "37e67939-e00b-419f-beb3-c3901b6e271f", 
-        "568d70a1-887f-49e2-b487-6073aadf5205", 
-        "986fa20d-cf59-4934-ab8b-002e0834ca8e", 
-        "f4620688-64f6-4ca6-92e2-ffc1a1b7151b",
-        "d5cdc02d-3e60-4ef3-884c-e66882cbdd28",
-        "a8322d66-52ff-44d7-84e6-bd04ba90bd7e"
+        "0_98f8c612-4b88-4d24-af41-010a2c1f2014", 
+        "1_5c1fb56c-cdbf-4577-9e21-29ac96b067dc", 
+        "2_0000de43-e5fb-4500-a673-58756adb64e6", 
+        "3_76fce6d2-865e-44e9-860f-b91e88d6f79f", 
+        "4_37e67939-e00b-419f-beb3-c3901b6e271f", 
+        "5_568d70a1-887f-49e2-b487-6073aadf5205", 
+        "6_986fa20d-cf59-4934-ab8b-002e0834ca8e", 
+        "7_f4620688-64f6-4ca6-92e2-ffc1a1b7151b",
+        "8_d5cdc02d-3e60-4ef3-884c-e66882cbdd28",
+        "9_a8322d66-52ff-44d7-84e6-bd04ba90bd7e"
     ];
     const puzzles = saveDataDal.getSaveData().puzzles;
     const numberOfUnsolvedPuzzles = puzzles.filter(puzzle => !puzzle.isSolved).length;
